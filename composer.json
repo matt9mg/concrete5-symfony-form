@@ -1,0 +1,10 @@
+{
+    "require": {
+        "symfony/form": "4.*",
+        "symfony/templating": "^5.1",
+        "symfony/translation": "^5.1",
+        "symfony/http-foundation": "^5.1",
+        "symfony/security-csrf": "^5.1",
+        "symfony/validator": "^5.1"
+    }
+}

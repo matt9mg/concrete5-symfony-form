@@ -1,10 +1,26 @@
 {
-    "require": {
-        "symfony/form": "4.*",
-        "symfony/templating": "^5.1",
-        "symfony/translation": "^5.1",
-        "symfony/http-foundation": "^5.1",
-        "symfony/security-csrf": "^5.1",
-        "symfony/validator": "^5.1"
+  "name": "matt9mg/concrete5-symfony-form",
+  "type": "library",
+  "description": "Symfony Form Integration For Concrete5",
+  "keywords": [],
+  "homepage": "https://github.com/matt9mg/concrete5-symfony-forms",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Matthew Thomas"
     }
+  ],
+  "require": {
+    "symfony/form": "4.*",
+    "symfony/templating": "^5.1",
+    "symfony/translation": "^5.1",
+    "symfony/http-foundation": "^5.1",
+    "symfony/security-csrf": "^5.1",
+    "symfony/validator": "^5.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Matt9mg\\Concrete5\\Symfony\\Form\\": ""
+    }
+  }
 }

@@ -1,16 +1,12 @@
 <?php
-
+namespace Matt9mg\Concrete5\Symfony\Form;
 
 use Symfony\Component\Templating\Helper\Helper;
 use Symfony\Component\Form\FormRendererInterface;
 use Symfony\Component\Form\FormView;
 
 /**
- * FormHelper provides helpers to help display forms.
- *
- * @author Fabien Potencier <fabien@symfony.com>
- * @author Bernhard Schussek <bschussek@gmail.com>
- *
+ * Class FormHelper
  */
 class FormHelper extends Helper
 {

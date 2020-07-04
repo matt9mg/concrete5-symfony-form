@@ -1,11 +1,12 @@
 <?php
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/FileSystemLoader.php';
-require_once __DIR__ . '/FormHelper.php';
-require_once __DIR__ . '/TemplateNameParser.php';
-require_once __DIR__ . '/TemplateReference.php';
-require_once __DIR__ . '/TranslatorHelper.php';
+
+use Matt9mg\Concrete5\Symfony\Form\FileSystemLoader;
+use Matt9mg\Concrete5\Symfony\Form\FormHelper;
+use Matt9mg\Concrete5\Symfony\Form\TemplateNameParser;
+use Matt9mg\Concrete5\Symfony\Form\TranslatorHelper;
+
 require_once __DIR__ .'/Test.php';
 
 use Symfony\Component\Form\FormRenderer;

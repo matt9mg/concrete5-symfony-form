@@ -1,5 +1,7 @@
 <?php
 
+namespace Matt9mg\Concrete5\Symfony\Form;
+
 use Symfony\Contracts\Translation\TranslatorTrait;
 use Symfony\Component\Templating\Helper\Helper;
 use Symfony\Contracts\Translation\TranslatorInterface;

@@ -1,4 +1,6 @@
 <?php
+namespace Matt9mg\Concrete5\Symfony\Form;
+
 use Symfony\Component\Templating\Loader\FilesystemLoader as BaseFilesystemLoader;
 use Symfony\Component\Templating\Storage\FileStorage;
 use Symfony\Component\Templating\TemplateReferenceInterface;

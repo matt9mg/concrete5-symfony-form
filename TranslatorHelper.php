@@ -7,6 +7,10 @@ use Symfony\Component\Templating\Helper\Helper;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\Translation\TranslatorBagInterface as LegacyTranslatorInterface;
 
+/**
+ * Class TranslatorHelper
+ * @package Matt9mg\Concrete5\Symfony\Form
+ */
 class TranslatorHelper extends Helper
 {
     use TranslatorTrait {
@@ -46,8 +50,6 @@ class TranslatorHelper extends Helper
      */
     public function transChoice($id, $number, array $parameters = [], $domain = 'messages', $locale = null)
     {
-        @trigger_error(sprintf('The "%s()" method is deprecated since Symfony 4.2, use the trans() one instead with a "%%count%%" parameter.', __METHOD__), E_USER_DEPRECATED);
-
         if (null === $this->translator) {
             return $this->doTrans($id, ['%count%' => $number] + $parameters, $domain, $locale);
         }

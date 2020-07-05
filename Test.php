@@ -1,12 +1,19 @@
 <?php
 
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 /**
  * Class Test
  */
 class Test
 {
+
     private $name;
 
+    /**
+     * @Assert\Length(min="4")
+     */
     private $text;
 
     /**

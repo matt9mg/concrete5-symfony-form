@@ -44,6 +44,6 @@ echo $formHelper->widget($view->vars['form']['name']);
 echo $formHelper->errors($view->vars['form']['name']);
 echo '<br />';
 echo $formHelper->label($view->vars['form']['text']);
-echo $formHelper->widget($view->vars['form']['text']);
+echo $formHelper->widget($view->vars['form']['text'], ['attr' => ['style' => 'border: 10px']]);
 echo $formHelper->errors($view->vars['form']['text']);
 echo $formHelper->end($view);

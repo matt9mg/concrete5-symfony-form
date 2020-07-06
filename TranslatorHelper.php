@@ -3,7 +3,6 @@
 namespace Matt9mg\Concrete5\Symfony\Form;
 
 use Symfony\Component\Templating\Helper\Helper;
-use Concrete\Core\Localization\Translator\TranslatorAdapterInterface;
 
 /**
  * Class TranslatorHelper
@@ -12,29 +11,24 @@ use Concrete\Core\Localization\Translator\TranslatorAdapterInterface;
 class TranslatorHelper extends Helper
 {
     /**
-     * @var TranslatorAdapterInterface
-     */
-    protected $translator;
-
-    /**
-     * @param TranslatorAdapterInterface|null $translator
-     */
-    public function __construct(TranslatorAdapterInterface $translator)
-    {
-        $this->translator = $translator;
-    }
-
-    /**
-     * @see TranslatorInterface::trans()
+     * @param $id
+     * @param array $parameters
+     * @param string $domain
+     * @param null $locale
+     * @return string
      */
     public function trans($id, array $parameters = [], $domain = 'messages', $locale = null): string
     {
-        return $this->translator->translate($id);
+        return t($id);
     }
 
     /**
-     * @see TranslatorInterface::transChoice()
-     * @deprecated since Symfony 4.2, use the trans() method instead with a %count% parameter
+     * @param $id
+     * @param $number
+     * @param array $parameters
+     * @param string $domain
+     * @param null $locale
+     * @return string
      */
     public function transChoice($id, $number, array $parameters = [], $domain = 'messages', $locale = null): string
     {

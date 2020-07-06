@@ -78,10 +78,7 @@ class FormRenderer
         $rendererEngine = new TemplatingRendererEngine($this->engine, $this->templatePaths);
         $this->renderer = new SymfonyFormRenderer($rendererEngine);
         $this->formHelper = new FormHelper($this->renderer);
-
-        // need to update the below to use C5 translations
-        $loc = Localization::getInstance();
-        $translatorHelper = new TranslatorHelper($loc->getActiveTranslatorAdapter());
+        $translatorHelper = new TranslatorHelper();
 
         $helpers = array_merge($this->helpers, [$this->formHelper, $translatorHelper]);
 

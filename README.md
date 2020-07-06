@@ -79,6 +79,21 @@ file_manager_type => 'APP' or 'AUDIO' or 'DOC' or 'FILE' or 'IMAGE' or 'TEXT' or
 
 file_manager_args => []
 
+Example within a form class
+
+```php
+public function buildForm(FormBuilderInterface $builder, array $options)
+{
+    $builder
+        // ...
+        ->add('relatedPage', FileManagerType::class, [
+            'file_manager_type' => FileManagerType::FILE_MANAGER_TYPE_FILE,
+        ])
+    ;
+}
+``z
+
+
 ##### Configuration Options for SitemapType::class
 In the normal symfony way when declare the field type array the below options are available for this field type.
 
@@ -87,6 +102,18 @@ selector_type => 'SELECT_PAGE' or 'QUICK_SELECT' or 'MULTIPLE_SITEMAP' or 'SELEC
 selector_type_args => []
 
 selector_type_starting_point => 'HOME_CID'
+
+```php
+public function buildForm(FormBuilderInterface $builder, array $options)
+{
+    $builder
+        // ...
+        ->add('relatedPage', SitemapType::class, [
+            'selector_type' => SitemapType::SITEMAP_TYPE_SELECT_PAGE,
+        ])
+    ;
+}
+```
 
 ### Feedback
 

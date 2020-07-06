@@ -10,7 +10,7 @@ use Symfony\Component\Form\Extension\Validator\ValidatorExtension;
 use Symfony\Component\Form\FormExtensionInterface;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\Form\Forms;
-use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Security\Csrf\CsrfTokenManager;
 use Symfony\Component\Security\Csrf\TokenGenerator\UriSafeTokenGenerator;
 use Symfony\Component\Security\Csrf\TokenStorage\SessionTokenStorage;
@@ -22,6 +22,20 @@ use Symfony\Component\Validator\Validation;
  */
 class FormFactory
 {
+    /**
+     * @var SessionInterface
+     */
+    private $session;
+
+    /**
+     * FormFactory constructor.
+     * @param SessionInterface $session
+     */
+    public function __construct(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
+
     /**
      * @var FormExtensionInterface[]
      */
@@ -42,9 +56,8 @@ class FormFactory
 
     public function createFormFactory(): FormFactoryInterface
     {
-        $session = new Session();
         $csrfGenerator = new UriSafeTokenGenerator();
-        $csrfStorage = new SessionTokenStorage($session);
+        $csrfStorage = new SessionTokenStorage($this->session);
         $csrfManager = new CsrfTokenManager($csrfGenerator, $csrfStorage);
 
         $validator = Validation::createValidatorBuilder()

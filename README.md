@@ -86,7 +86,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
 {
     $builder
         // ...
-        ->add('relatedPage', FileManagerType::class, [
+        ->add('relatedImage', FileManagerType::class, [
             'file_manager_type' => FileManagerType::FILE_MANAGER_TYPE_FILE,
         ])
     ;

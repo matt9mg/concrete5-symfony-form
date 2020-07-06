@@ -6,7 +6,7 @@ NOT PRODUCTION READY WIP
 ### TODO
 
 - [X] Bridge the gap
-- [ ] Create Sitemap Form Type Class - Just need to additional configOptions for additional params
+- [X] Create Sitemap Form Type Class
 - [ ] Create file types Class
 - [ ] use C5 translation functions for trans and transChoice
 - [ ] Unit tests

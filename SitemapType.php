@@ -23,6 +23,8 @@ class SitemapType extends AbstractType
         $resolver->setDefaults([
             'compound' => false,
             'selector_type' => self::SITEMAP_TYPE_SELECT_PAGE,
+            'selector_type_args' => [],
+            'selector_type_starting_point' => 'HOME_CID'
         ]);
 
         $resolver->setAllowedValues('selector_type', [
@@ -36,6 +38,8 @@ class SitemapType extends AbstractType
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['selector_type'] = $options['selector_type'];
+        $view->vars['selector_type_args'] = $options['selector_type_args'];
+        $view->vars['selector_type_starting_point'] = $options['selector_type_starting_point'];
 
         parent::buildView($view, $form, $options);
     }

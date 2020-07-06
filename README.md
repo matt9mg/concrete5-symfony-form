@@ -1,6 +1,6 @@
 # concrete5-symfony-forms
 
-NOT PRODUCTION READY WIP
+NOT PRODUCTION READY WIP - You can use if you wish but updates will be made over the next few days and should be production ready by 11th or 12th 07/2020
 
 
 ### TODO

@@ -69,4 +69,4 @@ $formHelper = (new FormRenderer())
 
 ### Feedback
 
-Feedback is always welcome, want to add some features please raise a PR, I hope this you :)
+Feedback is always welcome, want to add some features please raise a PR, I hope this helps you :)

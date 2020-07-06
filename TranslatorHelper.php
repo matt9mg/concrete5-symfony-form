@@ -2,10 +2,8 @@
 
 namespace Matt9mg\Concrete5\Symfony\Form;
 
-use Symfony\Contracts\Translation\TranslatorTrait;
 use Symfony\Component\Templating\Helper\Helper;
-use Symfony\Contracts\Translation\TranslatorInterface;
-use Symfony\Component\Translation\TranslatorBagInterface as LegacyTranslatorInterface;
+use Concrete\Core\Localization\Translator\TranslatorAdapterInterface;
 
 /**
  * Class TranslatorHelper
@@ -13,51 +11,34 @@ use Symfony\Component\Translation\TranslatorBagInterface as LegacyTranslatorInte
  */
 class TranslatorHelper extends Helper
 {
-    use TranslatorTrait {
-        getLocale as private;
-        setLocale as private;
-        trans as private doTrans;
-    }
-
+    /**
+     * @var TranslatorAdapterInterface
+     */
     protected $translator;
 
     /**
-     * @param TranslatorInterface|null $translator
+     * @param TranslatorAdapterInterface|null $translator
      */
-    public function __construct($translator = null)
+    public function __construct(TranslatorAdapterInterface $translator)
     {
-        if (null !== $translator && !$translator instanceof LegacyTranslatorInterface && !$translator instanceof TranslatorInterface) {
-            throw new \TypeError(sprintf('Argument 1 passed to "%s()" must be an instance of "%s", "%s" given.', __METHOD__, TranslatorInterface::class, \is_object($translator) ? \get_class($translator) : \gettype($translator)));
-        }
         $this->translator = $translator;
     }
 
     /**
      * @see TranslatorInterface::trans()
      */
-    public function trans($id, array $parameters = [], $domain = 'messages', $locale = null)
+    public function trans($id, array $parameters = [], $domain = 'messages', $locale = null): string
     {
-        if (null === $this->translator) {
-            return $this->doTrans($id, $parameters, $domain, $locale);
-        }
-
-        return $this->translator->trans($id, $parameters, $domain, $locale);
+        return $this->translator->translate($id);
     }
 
     /**
      * @see TranslatorInterface::transChoice()
      * @deprecated since Symfony 4.2, use the trans() method instead with a %count% parameter
      */
-    public function transChoice($id, $number, array $parameters = [], $domain = 'messages', $locale = null)
+    public function transChoice($id, $number, array $parameters = [], $domain = 'messages', $locale = null): string
     {
-        if (null === $this->translator) {
-            return $this->doTrans($id, ['%count%' => $number] + $parameters, $domain, $locale);
-        }
-        if ($this->translator instanceof TranslatorInterface) {
-            return $this->translator->trans($id, ['%count%' => $number] + $parameters, $domain, $locale);
-        }
-
-        return $this->translator->transChoice($id, $number, $parameters, $domain, $locale);
+        return t($id);
     }
 
     /**

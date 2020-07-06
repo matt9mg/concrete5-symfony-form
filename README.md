@@ -8,6 +8,6 @@ NOT PRODUCTION READY WIP - You can use if you wish but updates will be made over
 - [X] Bridge the gap
 - [X] Create Sitemap Form Type Class
 - [X] Create file types Class
-- [ ] use C5 translation functions for trans and transChoice
+- [X] use C5 translation functions for trans and transChoice
 - [ ] Unit tests
 - [ ] Docs

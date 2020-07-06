@@ -64,6 +64,10 @@ class FormFactory
             ->enableAnnotationMapping()
             ->getValidator();
 
+        // need to update the below to use C5 translations
+        $translator = new \Symfony\Component\Translation\Translator('en_US');
+        $translatorHelper = new TranslatorHelper($translator);
+
         $forms = Forms::createFormFactoryBuilder()
             ->addExtension(new HttpFoundationExtension())
             ->addExtension(new CsrfExtension($csrfManager))

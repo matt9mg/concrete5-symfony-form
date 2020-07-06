@@ -4,15 +4,12 @@ declare(strict_types=1);
 namespace Matt9mg\Concrete5\Symfony\Form;
 
 
+use Concrete\Core\Localization\Localization;
 use Symfony\Component\Form\Extension\Templating\TemplatingRendererEngine;
 use Symfony\Component\Templating\Helper\HelperInterface;
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Form\FormRenderer as SymfonyFormRenderer;
 
-/**
- * Class FormRenderer
- * @package Matt9mg\Concrete5\Symfony\Form
- */
 class FormRenderer
 {
     /**
@@ -26,7 +23,7 @@ class FormRenderer
     private $formHelper;
 
     /**
-     * @var \Symfony\Component\Form\FormRenderer
+     * @var SymfonyFormRenderer
      */
     private $renderer;
 
@@ -83,8 +80,8 @@ class FormRenderer
         $this->formHelper = new FormHelper($this->renderer);
 
         // need to update the below to use C5 translations
-        $translator = new \Symfony\Component\Translation\Translator('en_US');
-        $translatorHelper = new TranslatorHelper($translator);
+        $loc = Localization::getInstance();
+        $translatorHelper = new TranslatorHelper($loc->getActiveTranslatorAdapter());
 
         $helpers = array_merge($this->helpers, [$this->formHelper, $translatorHelper]);
 

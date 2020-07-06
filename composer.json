@@ -26,6 +26,7 @@
       "Matt9mg\\Concrete5\\Symfony\\Form\\": ""
     }
   },
+  "prefer-stable": true,
   "minimum-stability": "dev",
   "extra": {
     "branch-alias": {

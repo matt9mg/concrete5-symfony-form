@@ -4,11 +4,24 @@ namespace Matt9mg\Concrete5\Symfony\Form;
 
 use Symfony\Component\Templating\TemplateReferenceInterface;
 
+/**
+ * Class TemplateReference
+ * @package Matt9mg\Concrete5\Symfony\Form
+ */
 
 class TemplateReference implements TemplateReferenceInterface
 {
+    /**
+     * @var []
+     */
     protected $parameters;
 
+    /**
+     * TemplateReference constructor.
+     * @param null $location
+     * @param null $name
+     * @param null $engine
+     */
     public function __construct($location = null, $name = null, $engine = null)
     {
         $this->parameters = array(
@@ -21,7 +34,7 @@ class TemplateReference implements TemplateReferenceInterface
     /**
      * {@inheritdoc}
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getLogicalName();
     }
@@ -29,7 +42,7 @@ class TemplateReference implements TemplateReferenceInterface
     /**
      * {@inheritdoc}
      */
-    public function set($name, $value)
+    public function set($name, $value): self
     {
         if (array_key_exists($name, $this->parameters)) {
             $this->parameters[$name] = $value;
@@ -55,7 +68,7 @@ class TemplateReference implements TemplateReferenceInterface
     /**
      * {@inheritdoc}
      */
-    public function all()
+    public function all(): array
     {
         return $this->parameters;
     }
@@ -63,7 +76,7 @@ class TemplateReference implements TemplateReferenceInterface
     /**
      * {@inheritdoc}
      */
-    public function getPath()
+    public function getPath(): string
     {
         return $this->parameters['location'] . '/' . $this->parameters['name'];
     }
@@ -71,7 +84,7 @@ class TemplateReference implements TemplateReferenceInterface
     /**
      * {@inheritdoc}
      */
-    public function getLogicalName()
+    public function getLogicalName(): string
     {
         return $this->parameters['location'] . ':' . $this->parameters['name'];
     }

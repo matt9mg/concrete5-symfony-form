@@ -8,6 +8,10 @@ use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Class SitemapType
+ * @package Matt9mg\Concrete5\Symfony\Form
+ */
 class SitemapType extends AbstractType
 {
     public const SITEMAP_TYPE_SELECT_PAGE = 'SELECT_PAGE';

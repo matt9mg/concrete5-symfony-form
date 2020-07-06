@@ -5,7 +5,10 @@ use Symfony\Component\Templating\Loader\FilesystemLoader as BaseFilesystemLoader
 use Symfony\Component\Templating\Storage\FileStorage;
 use Symfony\Component\Templating\TemplateReferenceInterface;
 
-
+/**
+ * Class FilesystemLoader
+ * @package Matt9mg\Concrete5\Symfony\Form
+ */
 class FilesystemLoader extends BaseFilesystemLoader
 {
 

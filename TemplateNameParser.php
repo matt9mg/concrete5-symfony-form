@@ -4,12 +4,16 @@ namespace Matt9mg\Concrete5\Symfony\Form;
 use Symfony\Component\Templating\TemplateNameParser as BaseTemplateNameParser;
 use Symfony\Component\Templating\TemplateReferenceInterface;
 
+/**
+ * Class TemplateNameParser
+ * @package Matt9mg\Concrete5\Symfony\Form
+ */
 class TemplateNameParser extends BaseTemplateNameParser
 {
     /**
      * {@inheritdoc}
      */
-    public function parse($name)
+    public function parse($name): TemplateReferenceInterface
     {
         if ($name instanceof TemplateReferenceInterface) {
             return $name;

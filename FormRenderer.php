@@ -9,6 +9,10 @@ use Symfony\Component\Templating\Helper\HelperInterface;
 use Symfony\Component\Templating\PhpEngine;
 use Symfony\Component\Form\FormRenderer as SymfonyFormRenderer;
 
+/**
+ * Class FormRenderer
+ * @package Matt9mg\Concrete5\Symfony\Form
+ */
 class FormRenderer
 {
     /**

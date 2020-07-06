@@ -16,6 +16,8 @@ composer require matt9mg/concrete5-symfony-form
 ```
 
 ### Using the Form Component in a view
+This is a generic example using doctrine entities, but can be used as a raw form or other class.
+
 
 ```php
 use Matt9mg\Concrete5\Symfony\Form\FormFactory;
@@ -27,11 +29,17 @@ public function view()
         $this->app->make('session')
     ))->createFormFactory();
 
-    $form = $factory->create(MyForm::class);
+    $em = $this->app->make(EntityManagerInterace::class);
+    $entity = $em->getRepostiory(MyEntity:class);
+
+    $form = $factory->create(MyForm::class, $entity);
     $form->handleRequest($this->request);
 
     if ($form->isSubmitted() === true && $form->isValid() === true) {
-        ...
+        $em->persist($entity);
+        $em->flush();
+    
+        //...
     }
 
     $this->set('formView', $form->createView());

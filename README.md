@@ -67,6 +67,24 @@ $formHelper = (new FormRenderer())
 
 ```
 
+### How to use the C5 Specific form extensions
+There are two new Types ```FileManagerType::class``` and ```SitemapType::class```.
+
+The below new config options have public constants for these options.
+
+##### Configuration Options for FileManagerType::class
+In the normal symfony way when declare the field type array the below options are available for this field type.
+
+file_manager_type => 'APP' or 'AUDIO' or 'DOC' or 'FILE' or 'IMAGE' or 'TEXT' or 'VIDEO'
+file_manager_args => []
+
+##### Configuration Options for SitemapType::class
+In the normal symfony way when declare the field type array the below options are available for this field type.
+
+selector_type => 'SELECT_PAGE' or 'QUICK_SELECT' or 'MULTIPLE_SITEMAP' or 'SELECT_FROM_SITEMAP'
+selector_type_args => []
+selector_type_starting_point => 'HOME_CID'
+
 ### Feedback
 
 Feedback is always welcome, want to add some features please raise a PR, I hope this helps you :)

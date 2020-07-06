@@ -1,13 +1,18 @@
-# concrete5-symfony-forms
+# Concrete5 Symfony Form Component
 
-NOT PRODUCTION READY WIP - You can use if you wish but updates will be made over the next few days and should be production ready by 11th or 12th 07/2020
+The Form component allows you to easily create, process and reuse HTML forms using the Symfony Form Component within Concrete 5.
+
+### Resources
+
+- https://documentation.concrete5.org/
+- https://symfony.com/doc/current/components/form.html
+- https://github.com/matt9mg/concrete5-symfony-form/issues
 
 
-### TODO
+### Installation
 
-- [X] Bridge the gap
-- [X] Create Sitemap Form Type Class
-- [X] Create file types Class
-- [X] use C5 translation functions for trans and transChoice
-- [ ] Unit tests
-- [ ] Docs
+```
+composer require matt9mg/concrete5-symfony-form
+```
+
+### 

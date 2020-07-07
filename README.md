@@ -2,6 +2,8 @@
 
 The Form component allows you to easily create, process and reuse HTML forms using the Symfony Form Component within Concrete 5.
 
+Tested with 8.5.4 +
+
 ### Resources
 
 - https://documentation.concrete5.org/
